@@ -1,8 +1,14 @@
 *{
     margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif ;
     border: border-box;
 }
+
+html, body {
+  overflow-x: hidden; /* removes horizontal scroll */
+}
+
 
 /** 1 nav-bar **/
 .navbar{
@@ -91,6 +97,7 @@ margin-left: 15px;
     width: 620px;
     height: 40px;
     border-radius: 4px;
+    
 
 }
 
@@ -235,16 +242,34 @@ justify-content: space-evenly;
 
 }
 
+
 /* Main-section */
-.main-section{
+/* .main-section{
     background-image: url(new\ img.jpg);
     height: 600px;
     background-size: cover;
+    background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+} */
+
+
+.main-section {
+  background-image: url("new img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* padding: 40px 20px; */
+
+  min-height: 80vh;   /* flexible height */
+  width: 100%;
 }
+
 
 .main-section:hover{
     cursor: pointer;
 }
+
 
 /* shop-section */
 
@@ -324,13 +349,22 @@ justify-content: space-evenly;
 
 .shop-content p:hover{
     color: rgb(204, 3, 3)
+
 }
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* styling the footer */
 
 footer{
     margin-top: 15px;
 }
+
 /* footpanel 1 */
 
 .footpanel-1{
@@ -400,7 +434,9 @@ ul a:hover{
     align-items: center;
    justify-content: space-evenly;
    margin: 20px;
-   display: block
+   display: block;
+   padding: 20px;
+
 }
 
 
@@ -434,12 +470,15 @@ ul a:hover{
     display: flex;
     
     
+    
 }
 .foot5{
     align-items: center;
    justify-content: space-evenly;
    margin: 20px;
-   display: block
+   display: block;
+   padding: 20px;
+
 }
 
 .foot5:hover{
@@ -482,7 +521,9 @@ ul a:hover{
     align-items: center;
    justify-content: space-evenly;
    margin: 20px;
-   display: block
+   display: block;
+   padding: 20px;
+
 }
 
 .foot6:hover{
@@ -516,6 +557,8 @@ ul a:hover{
     padding-top: 25px;
 }
 
+
+
 .pages{
     font-size: 0.8rem;
     text-align: center;
@@ -537,3 +580,228 @@ ul a:hover{
     text-decoration: underline;
     cursor: pointer;
 }
+
+
+/* ========== MEDIA QUERIES ========== */
+
+@media (max-width: 992px) {
+.navbar{
+    height: fit-content;
+     align-items: center;
+     /* flex-direction: column; */
+     flex-wrap: wrap;
+
+}
+.nav-search{
+    height: 40px ;
+    width: 600px;
+    margin: 4px;
+}
+
+}
+
+
+/* Large tablets / small laptops (max-width 1200px) */
+@media (max-width: 1200px) {
+
+    .main-section {
+    height: auto;
+    padding: 20px 0;
+    background-color:pink;
+  }
+
+  .box, .shop {
+    width: 45%;
+    margin-top: 5%;
+  }
+  .shop-section, .shopnow-section {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+}
+
+/* Tablets (max-width 992px) */
+@media (max-width: 992px) {
+
+    .main-section {
+    min-height: 70vh;
+    background-position: center;
+  }
+
+  .box, .shop {
+    width: 100%;
+    margin-top: 30px;
+    height: auto;
+  }
+  .box-img, .shop-img {
+    height: 600px;
+  }
+  
+}
+
+
+/* Mobile landscape (max-width: 768px) */
+@media (max-width: 768px) {
+
+    .main-section {
+    min-height: 60vh;
+    background-position: center;
+  }
+
+  .box, .shop {
+    width: 100%;
+    margin-top: 30px;
+    height: auto;
+  }
+  .shop-section, .shopnow-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .box-img, .shop-img {
+    height: 300px;
+  }
+ 
+}
+
+
+
+/* Mobile portrait (max-width: 576px) */
+@media (max-width: 576px) {
+
+    .main-section {
+    min-height: 40vh;
+    background-position: top center; /* better for portrait */
+  }
+
+  .box, .shop {
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+  }
+  .box-img, .shop-img {
+    height: 180px;
+  }
+  .box-content h2, .shop-content h2 {
+    font-size: 1.2rem;
+  }
+  .box-content p, .shop-content p {
+    font-size: 0.9rem;
+  }
+
+}
+
+ /* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .footpanel-2,
+  .footpanel-4,
+  .footpanel-5,
+  .footpanel-6 {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+
+  .foot4, .foot5, .foot6 {
+    margin: 10px;
+    text-align: center;
+    width: 30%;
+  }
+
+  .foot4 p, .foot5 p, .foot6 p {
+    font-size: 0.7rem;
+  }
+
+  .foot4 a, .foot5 a, .foot6 a {
+    font-size: 0.7rem;
+  }
+
+  .logo {
+    height: 40px;
+    width: 80px;
+  }
+ } 
+
+/* Mobiles Landscape (≤ 768px) */
+ @media (max-width: 768px) {
+  .footpanel-2 {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .footpanel-4,
+  .footpanel-5,
+  .footpanel-6 {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+
+  .foot4, .foot5, .foot6 {
+    width: 45%;
+    margin: 8px;
+    text-align: center;
+  }
+
+  .pages {
+    font-size: 0.7rem;
+  }
+
+  .copyright {
+    font-size: 0.7rem;
+  }
+}
+
+/* Mobiles Portrait (≤ 576px) */
+ @media (max-width: 576px) {
+  .footpanel-2 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 35%;
+  }
+
+  .footpanel-4,
+  .footpanel-5,
+  .footpanel-6 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40%;
+
+  }
+
+  .foot4, .foot5, .foot6 {
+    width: 100%;
+    margin: 0px 0;
+    text-align: left;
+  }
+
+  .foot4 p, .foot5 p, .foot6 p {
+    font-size: 0.80rem;
+  }
+
+  .foot4 a, .foot5 a, .foot6 a {
+    font-size: 0.75rem;
+  }
+
+  .logo {
+    margin: auto;
+    height: 35px;
+    width: 70px;
+  }
+
+.pages a{
+margin: 2px;
+padding: 4px;
+}
+  .pages, .copyright {
+    font-size: 0.80rem;
+    padding: 7px 10px;
+    text-align: center;
+  }
+
+} 
+
+
